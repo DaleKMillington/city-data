@@ -1,0 +1,36 @@
+# General
+__pycache__/
+*.py[cod]
+*.bak
+*.swp
+*.swo
+*.log
+*.db
+
+# Django
+*.sqlite3
+*.pyo
+*.db.sqlite3
+*.db.sqlite3-journal
+*.ini
+*.psd
+*.db
+
+# Poetry
+__pypackages__/
+.venv/
+pyproject.toml
+poetry.lock
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Temporary/Backup files
+*.bak
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
