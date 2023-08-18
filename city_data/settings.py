@@ -124,5 +124,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# BREEZO API KEY
-BREEZO_API_KEY = os.environ.get('BREEZO_API_KEY')
+# Open Weather Map API Key
+OPEN_WEATHER_MAP_API_KEY = os.environ.get('OPEN_WEATHER_MAP_API_KEY')
