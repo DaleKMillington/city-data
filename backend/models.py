@@ -5,9 +5,6 @@ import secrets
 from django.db import models
 
 
-# Application Imports
-
-
 class BaseModel(models.Model):
     class Meta:
         abstract = True
