@@ -19,8 +19,6 @@ __pycache__/
 # Poetry
 __pypackages__/
 .venv/
-pyproject.toml
-poetry.lock
 
 # Editor/IDE
 .vscode/
