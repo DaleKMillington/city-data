@@ -4,6 +4,7 @@ from rest_framework import serializers
 # Application Imports
 from .models import (
     City,
+    WeatherData,
     APIUser
 )
 
@@ -51,3 +52,9 @@ class CitySerializer(BaseSerializer):
         if value < -180 or value > 180:
             raise serializers.ValidationError('Longitude must be between -180 and 180.')
         return value
+
+
+class WeatherDataSerializer(BaseSerializer):
+    class Meta:
+        model = WeatherData
+        fields = '__all__'
