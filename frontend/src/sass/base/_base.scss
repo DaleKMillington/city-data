@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* 
+        Root font-size: 
+        16px obtained from browser agent unless overridden in user settings
+        we want 10px so 10/16 = 0.625
+    */
+    // Hence this defines what 1rem is....
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
