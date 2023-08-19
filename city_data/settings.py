@@ -26,9 +26,6 @@ SECRET_KEY = 'django-insecure-bgb5bhtj49&g3$^)ggb7kx=h6@%ha=czs$4fa&22ko7zen$(*v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,11 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'backend',
     'backend_build'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +129,11 @@ API_VERSION = 'v1.0'
 
 # Open Weather Map API Key
 OPEN_WEATHER_MAP_API_KEY = os.environ.get('OPEN_WEATHER_MAP_API_KEY')
+
+# For development, you can allow all origins (not recommended for production)
+CORS_ALLOW_HEADERS = [
+    'X-API-KEY',   # Add any other headers you need to allow
+    # ...other headers
+]
+CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ['localhost']

@@ -1,0 +1,33 @@
+.map-container {
+    position: absolute;
+    background: $color-grey-light-1;
+    top: 10rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.map-marker {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    background: rgba(#5643fa, 0.85);
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        border: 2px solid $color-grey-light-1;
+    }
+}
+
+.marker-tooltip {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background-color: $color-grey-light-1;
+    color: $color-grey-dark;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    white-space: nowrap;
+}
+
+

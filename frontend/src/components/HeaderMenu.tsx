@@ -1,5 +1,6 @@
 // Base Imports
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 // Hooks
 import { useState } from 'react';
@@ -26,13 +27,16 @@ const HeaderMenu: React.FC<HeaderBarProps> = ({ menuItems }) => {
                         {
                             menuItems.map((item: MenuItem, index: number) => (
                                 <li key={ index } className="header-menu-list__item">
-                                    <a href={ item.link } className="header-menu-list__link">{ item.text }</a>
+                                    <Link to={ item.path } className="header-menu-list__link" onClick={ toggleDropdown }>
+                                        { item.text }
+                                    </Link>
                                 </li>
                             ))
                         }
                     </ul>
                 )
             }
+            <Outlet/>
         </>
     )
 }
