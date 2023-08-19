@@ -1,0 +1,46 @@
+.header-menu-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $color-grey-dark;
+    list-style: none;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    animation: moveInRight .4s ease-out;
+
+
+    &__item {
+        width: 20rem;
+        text-align: center;
+    }
+
+
+    &__link {
+        margin: 2rem 0;
+        height: 100%;
+
+        &:link,
+        &:visited {
+            position: relative;
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: .5rem;
+            color: $color-grey-light-2;
+            width: 100%;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(90deg, transparent, $color-grey-dark 50%, $color-grey-light-2 50%);
+            background-size: 220%;
+            transition: all .4s;
+        }
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: $color-grey-dark;
+        }
+    }
+
+}
