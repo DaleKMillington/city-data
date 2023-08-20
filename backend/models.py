@@ -27,10 +27,15 @@ class City(BaseModel):
 class WeatherData(BaseModel):
     date_time = models.DateTimeField()
     city = models.ForeignKey(City, on_delete=models.CASCADE)
-    temperature = models.FloatField(null=True)  # Kelvin
-    humidity = models.IntegerField(null=True)  # %
-    wind_speed = models.FloatField(null=True)  # meter/sec
-    precipitation = models.FloatField(null=True)  # probability between 0-1.
+    temperature = models.FloatField(null=True)
+    humidity = models.IntegerField(null=True)
+    wind_speed = models.FloatField(null=True)
+    precipitation = models.FloatField(null=True)
+
+    def save(self, *args, **kwargs):
+        if self.precipitation is not None:
+            self.precipitation = self.precipitation * 100
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Weather data for {self.city.name} at {self.date_time}."

@@ -3,7 +3,7 @@
     margin: 0 2rem;
     border: none;
     border-radius: 0.5rem;
-    background: $color-grey-light-1;
+    background: $color-grey-dark;
     width: 50%;
     height: 95%;
     visibility: hidden;
@@ -23,5 +23,24 @@
 
     &--right-2 {
         animation: moveInRight 1s ease-out 1s forwards;
+    }
+
+    &__title {
+        display: flex;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        height: 5rem;
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+        color: $color-grey-light-1;
+    }
+
+    &__chart {
+        display: block;
+        width: 100%;
+        height: calc(100% - 5rem);
     }
 }

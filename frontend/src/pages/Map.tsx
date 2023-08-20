@@ -8,7 +8,7 @@ import axios from 'axios';
 
 // Components
 import Markers from '../components/Markers.tsx'
-import WeatherCharts from "../components/WeatherCharts.tsx";
+import WeatherChartsUI from "../components/WeatherChartsUI.tsx";
 
 // Interfaces
 import { CityData } from '../interfaces/CityData.ts';
@@ -17,7 +17,7 @@ const Map = () => {
 
     // Callbacks
     const fetchCityData = () => {
-        axios.get(`${import.meta.env.VITE_API_BASE_URL}city/`, {
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/city/`, {
             headers:{
                 'X-API-KEY': import.meta.env.VITE_X_API_KEY
             }
@@ -51,7 +51,7 @@ const Map = () => {
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
                 />
                 <Markers cityData={ cityData } onMarkerClick={ handleMarkerClick }></Markers>
-                { !!activeCity && <WeatherCharts activeCity={ activeCity } clearActiveCity={ clearActiveCity } />}
+                { !!activeCity && <WeatherChartsUI activeCity={ activeCity } clearActiveCity={ clearActiveCity } />}
             </MapContainer>
 
         </>
