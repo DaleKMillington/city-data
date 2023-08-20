@@ -7,14 +7,15 @@ import L from 'leaflet';
 
 // Interfaces
 import {CityData} from "../interfaces/CityData.ts";
+interface MarkersProps {
+    cityData: CityData[];
+    onMarkerClick: (marker: CityData) => void
+}
 
-const mapMarker = L.divIcon({
-    className: 'map-marker',
-    iconSize: [30, 30],
-});
+const Markers = ({ cityData, onMarkerClick }: MarkersProps) => {
 
-const Markers = ({ cityData }: { cityData: CityData[] }) => {
-    const map = useMap(); // Get the map instance using useMap hook
+    // Hooks
+    const map = useMap();
 
     useEffect(() => {
         if (cityData.length > 0) {
@@ -24,10 +25,23 @@ const Markers = ({ cityData }: { cityData: CityData[] }) => {
         }
     }, [cityData, map]);
 
+    // Marker Styles
+    const mapMarker = L.divIcon({
+        className: 'map-marker',
+        iconSize: [30, 30],
+    });
+
     return (
         <>
             {cityData.map(marker => (
-                <Marker key={marker.id} position={[marker.latitude, marker.longitude]} icon={mapMarker}>
+                <Marker
+                    key={marker.id}
+                    position={[marker.latitude, marker.longitude]}
+                    icon={mapMarker}
+                    eventHandlers={{
+                        click: () => onMarkerClick(marker)
+                    }}
+                >
                     <Tooltip className="marker-tooltip">{marker.name}</Tooltip>
                 </Marker>
             ))}

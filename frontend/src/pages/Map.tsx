@@ -8,15 +8,16 @@ import axios from 'axios';
 
 // Components
 import Markers from '../components/Markers.tsx'
+import WeatherCharts from "../components/WeatherCharts.tsx";
 
 // Interfaces
 import { CityData } from '../interfaces/CityData.ts';
 
-
 const Map = () => {
 
+    // Callbacks
     const fetchCityData = () => {
-        axios.get('http://localhost:8000/api/v1.0/city/', {
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}city/`, {
             headers:{
                 'X-API-KEY': import.meta.env.VITE_X_API_KEY
             }
@@ -25,24 +26,36 @@ const Map = () => {
             .catch(error => console.error('Error fetching data:', error))
     }
 
+    const handleMarkerClick = (marker: CityData) => setActiveCity(marker);
+    const clearActiveCity = () => setActiveCity(null);
+
     // Hooks
     const [cityData, setCityData] = useState<CityData[]>([]);
+    const [
+        activeCity,
+        setActiveCity
+    ] = useState<CityData | null>(null);
 
     useEffect(() => fetchCityData(), []);
 
     return (
-        <MapContainer
-            className="map-container"
-            minZoom={3}
-            maxZoom={19}
-            scrollWheelZoom={true}
-            zoomControl={false}
-        >
-            <TileLayer
-                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
-            />
-            <Markers cityData={ cityData }></Markers>
-        </MapContainer>
+        <>
+            <MapContainer
+                className="map-container"
+                minZoom={3}
+                maxZoom={19}
+                scrollWheelZoom={true}
+                zoomControl={false}
+            >
+                <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+                />
+                <Markers cityData={ cityData } onMarkerClick={ handleMarkerClick }></Markers>
+                { !!activeCity && <WeatherCharts activeCity={ activeCity } clearActiveCity={ clearActiveCity } />}
+            </MapContainer>
+
+        </>
+
     )
 }
 
