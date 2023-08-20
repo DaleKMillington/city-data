@@ -1,0 +1,15 @@
+.chart-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &--header {
+        height: 10rem;
+    }
+
+    &--main {
+        height: calc(50% - 5rem);
+    }
+}

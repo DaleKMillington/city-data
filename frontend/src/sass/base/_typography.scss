@@ -17,9 +17,6 @@ body {
         font-size: 5rem;
         font-weight: 400;
         letter-spacing: 2.5rem;
-        animation-name: moveInLeft;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
         animation: moveInLeft 1s ease-out;
     }
 }

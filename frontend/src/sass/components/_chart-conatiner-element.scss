@@ -1,0 +1,27 @@
+.chart-container-element {
+    display: block;
+    margin: 0 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: $color-grey-light-1;
+    width: 50%;
+    height: 95%;
+    visibility: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &--left-1 {
+        animation: moveInLeft 1s ease-out 0.5s forwards;
+    }
+
+    &--left-2 {
+        animation: moveInLeft 1s ease-out 1s forwards;
+    }
+
+    &--right-1 {
+        animation: moveInRight 1s ease-out 0.5s forwards;
+    }
+
+    &--right-2 {
+        animation: moveInRight 1s ease-out 1s forwards;
+    }
+}

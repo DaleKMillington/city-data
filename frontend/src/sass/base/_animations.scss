@@ -2,6 +2,7 @@
     0% {
         opacity: 0;
         transform: translateX(-10rem);
+        visibility: visible;
     }
 
     80% {
@@ -11,10 +12,29 @@
     100% {
         opacity: 1;
         transform: translate(0);
+        visibility: visible;
     }
 }
 
 @keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20rem);
+        visibility: visible;
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        visibility: visible;
+    }
+}
+
+@keyframes menuMoveInRight {
     0% {
         opacity: 0;
         transform: translateX(20rem);
@@ -34,4 +54,6 @@
         opacity: 1;
     }
 }
+
+
 

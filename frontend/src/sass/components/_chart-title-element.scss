@@ -1,0 +1,23 @@
+.chart-title-element{
+    display: block;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    height: 4rem;
+    line-height: 4rem;
+    color: $color-grey-light-1;
+    padding: 0 2rem;
+    width: 50%;
+
+    &--left {
+        animation: moveInLeft 1s ease-out;
+        text-align: right;
+        direction: rtl;
+        text-indent: -1rem;
+    }
+
+    &--right {
+        animation: moveInRight 1s ease-out;
+    }
+}

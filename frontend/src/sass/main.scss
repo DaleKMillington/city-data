@@ -1,16 +1,22 @@
-
-
+// Abstracts
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
+// Base/Utility
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
 
+// Components
+@import "components/chart-back";
+@import "components/chart-conatiner-element";
+@import "components/chart-row";
+@import "components/chart-title-element";
 @import "components/header-bar";
 @import "components/header-menu";
 @import "components/header-menu-list";
 
+// Pages
 @import "pages/map";

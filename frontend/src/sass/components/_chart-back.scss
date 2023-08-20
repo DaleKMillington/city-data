@@ -1,0 +1,21 @@
+.chart-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+    color: $color-grey-light-1;
+    border: 2px solid $color-grey-light-1;
+    border-radius: 0.3rem;
+    padding: 0.25rem 1.5rem;
+
+    &__icon {
+        font-size: 2.5rem;
+        transform: translateY(-0.1rem);
+    }
+
+    &:hover {
+        color: $color-grey-dark;
+        border: 2px solid $color-grey-dark;
+    }
+}
