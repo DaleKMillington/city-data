@@ -1,3 +1,7 @@
+"""
+URL confs relating to the City and WeatherData models.
+"""
+
 # Third Party Imports
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter

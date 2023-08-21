@@ -1,3 +1,7 @@
+"""
+Serializers relating to the City and WeatherData models.
+"""
+
 # Third Party Imports
 from rest_framework import serializers
 

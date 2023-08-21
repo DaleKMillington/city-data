@@ -4,10 +4,8 @@ from django.contrib import admin
 # Application Imports
 from .models import (
     City,
-    WeatherData,
-    APIUser
+    WeatherData
 )
 
 admin.site.register(City)
 admin.site.register(WeatherData)
-admin.site.register(APIUser)

@@ -1,3 +1,7 @@
+"""
+API Views relating to the City and WeatherData models.
+"""
+
 # Third Party Imports
 from rest_framework import viewsets
 from rest_framework.views import APIView
@@ -16,12 +20,16 @@ from .authentication import APIKeyAuthentication
 
 
 class CityViewSet(viewsets.ModelViewSet):
+    """ View set to allow easy access to GET/POST/PATCH/PUT/DELETE via API. """
+
     queryset = City.objects.all()
     serializer_class = CitySerializer
     authentication_classes = [APIKeyAuthentication]
 
 
 class WeatherDataView(APIView):
+    """ Weather data will only be requested via front-end. Therefore, custom view with only GET. """
+
     authentication_classes = [APIKeyAuthentication]
 
     @staticmethod

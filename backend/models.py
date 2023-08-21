@@ -1,3 +1,7 @@
+"""
+Models to define the data structure for the backend.
+"""
+
 # Base Imports
 import secrets
 
