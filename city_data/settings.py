@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'corsheaders',
     'backend',
     'backend_build'
@@ -113,12 +112,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -130,10 +123,8 @@ API_VERSION = 'v1.0'
 # Open Weather Map API Key
 OPEN_WEATHER_MAP_API_KEY = os.environ.get('OPEN_WEATHER_MAP_API_KEY')
 
-# For development, you can allow all origins (not recommended for production)
-CORS_ALLOW_HEADERS = [
-    'X-API-KEY',   # Add any other headers you need to allow
-    # ...other headers
-]
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS Settings
+CORS_ALLOW_HEADERS = ['X-API-KEY']
+CORS_ALLOW_METHODS = ['GET', 'OPTIONS']
+CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
 ALLOWED_HOSTS = ['localhost']
