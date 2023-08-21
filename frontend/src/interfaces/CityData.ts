@@ -1,3 +1,4 @@
+// Interface representing single element from api/v1.0/city/
 export interface CityData {
     creation_by: string,
     creation_date: string,

@@ -1,3 +1,4 @@
+// Interface representing single element from api/v1.0/weather/<city_name>/
 export interface WeatherData {
     city: number;
     creation_by: string;

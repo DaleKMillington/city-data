@@ -13,8 +13,10 @@ interface WeatherChartProps {
     position: string;
 }
 
+// Represents a weather metric chart.
 const WeatherChart = ({ weatherData, metricKey, metricUnits, metricColor, position }: WeatherChartProps) => {
 
+    // Construct class modifier
     const containerClasses = `chart-container-element chart-container-element--${position}`;
 
     return (

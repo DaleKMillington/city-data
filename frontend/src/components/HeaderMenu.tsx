@@ -1,19 +1,17 @@
 // Base Imports
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-
-// Hooks
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Interfaces
 import { MenuItem } from '../interfaces/MenuItem.ts';
-
-// Props interface
 interface HeaderBarProps {
   menuItems: MenuItem[];
 }
 
-const HeaderMenu: React.FC<HeaderBarProps> = ({ menuItems }) => {
+// Represents the menu button and contents.
+const HeaderMenu = ({ menuItems }: HeaderBarProps) => {
+
+    // Hooks
     const [isOpen, setIsOpen] = useState(false);
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -36,7 +34,6 @@ const HeaderMenu: React.FC<HeaderBarProps> = ({ menuItems }) => {
                     </ul>
                 )
             }
-            <Outlet/>
         </>
     )
 }

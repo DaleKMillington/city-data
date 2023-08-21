@@ -15,7 +15,7 @@ import { CityData } from '../interfaces/CityData.ts';
 
 const Map = () => {
 
-    // Callbacks
+    // CALLBACKS ------------------------------------------------------------------------------
     const fetchCityData = () => {
         axios.get(`${import.meta.env.VITE_API_BASE_URL}/city/`, {
             headers:{
@@ -27,16 +27,23 @@ const Map = () => {
     }
 
     const handleMarkerClick = (marker: CityData) => setActiveCity(marker);
-    const clearActiveCity = () => setActiveCity(null);
 
-    // Hooks
-    const [cityData, setCityData] = useState<CityData[]>([]);
+    const clearActiveCity = () => setActiveCity(null);
+    // -----------------------------------------------------------------------------------------
+
+    // HOOKS -----------------------------------------------------------------------------------
+    const [
+        cityData,
+        setCityData
+    ] = useState<CityData[]>([]);
+
     const [
         activeCity,
         setActiveCity
     ] = useState<CityData | null>(null);
 
     useEffect(() => fetchCityData(), []);
+    // ------------------------------------------------------------------------------------------
 
     return (
         <>

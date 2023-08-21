@@ -1,18 +1,14 @@
-// Base Imports
-import React from 'react';
-
-// Interfaces
-import { MenuItem } from '../interfaces/MenuItem.ts';
-
 // Components
 import HeaderMenu from "./HeaderMenu.tsx";
 
-// Props interface
+// Interfaces
+import { MenuItem } from '../interfaces/MenuItem.ts';
 interface HeaderBarProps {
     menuItems: MenuItem[];
 }
 
-const HeaderBar: React.FC<HeaderBarProps> = ({ menuItems}) => {
+// Represents the top header bar.
+const HeaderBar = ({ menuItems}: HeaderBarProps) => {
     return (
         <div className="header-bar">
             <h1 className="heading-primary">

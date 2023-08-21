@@ -16,11 +16,10 @@ interface WeatherChartsUIProps {
     clearActiveCity: () => void;
 }
 
-
-
+// Represents the weather charts UI layer.
 const WeatherChartsUI = ({ activeCity, clearActiveCity }: WeatherChartsUIProps) => {
 
-    // CALLBACKS
+    // CALLBACKS ---------------------------------------------------------------------------------
     const fetchWeatherData = () => {
         axios.get(`${import.meta.env.VITE_API_BASE_URL}/weather/${activeCity?.name}/`, {
             headers:{
@@ -30,8 +29,9 @@ const WeatherChartsUI = ({ activeCity, clearActiveCity }: WeatherChartsUIProps) 
             .then(response => setWeatherData(response.data))
             .catch(error => console.error('Error fetching data:', error))
     }
+    // -------------------------------------------------------------------------------------------
 
-    // HOOKS
+    // HOOKS -------------------------------------------------------------------------------------
     const [
         weatherData,
         setWeatherData
@@ -55,6 +55,7 @@ const WeatherChartsUI = ({ activeCity, clearActiveCity }: WeatherChartsUIProps) 
     }, [activeCity]);
 
     useEffect(() => fetchWeatherData(), []);
+    // -------------------------------------------------------------------------------------------
 
     return (
         <div className="map-barrier">

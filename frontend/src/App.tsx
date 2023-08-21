@@ -1,15 +1,15 @@
 // Base Imports
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// Interfaces
-import { MenuItem } from './interfaces/MenuItem.ts';
-
 // Components
 import HeaderBar from './components/HeaderBar.tsx';
 
 // Pages
 import Map from './pages/Map.tsx';
 import About from './pages/About.tsx';
+
+// Interfaces
+import { MenuItem } from './interfaces/MenuItem.ts';
 
 const App = () => {
 

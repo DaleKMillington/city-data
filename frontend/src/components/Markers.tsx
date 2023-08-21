@@ -2,21 +2,21 @@
 import { useEffect } from "react";
 
 // Third Party Imports
-import {Marker, Tooltip, useMap} from "react-leaflet";
+import { Marker, Tooltip, useMap } from "react-leaflet";
 import L from 'leaflet';
 
 // Interfaces
-import {CityData} from "../interfaces/CityData.ts";
+import { CityData } from "../interfaces/CityData.ts";
 interface MarkersProps {
     cityData: CityData[];
     onMarkerClick: (marker: CityData) => void
 }
 
+// Represents the leaflet map markers
 const Markers = ({ cityData, onMarkerClick }: MarkersProps) => {
 
-    // Hooks
+    // HOOKS ----------------------------------------------------------------------------------------------
     const map = useMap();
-
     useEffect(() => {
         if (cityData.length > 0) {
             const bounds = cityData.map(marker => [marker.latitude, marker.longitude]);
@@ -24,6 +24,7 @@ const Markers = ({ cityData, onMarkerClick }: MarkersProps) => {
             map.fitBounds(bounds);
         }
     }, [cityData, map]);
+    // ----------------------------------------------------------------------------------------------------
 
     // Marker Styles
     const mapMarker = L.divIcon({
