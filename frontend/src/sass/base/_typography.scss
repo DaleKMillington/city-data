@@ -1,3 +1,4 @@
+// General body font settings.
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -8,8 +9,9 @@ body {
     width: 100%;
 }
 
+// The primary heading font settings.
 .heading-primary {
-    color: $color-grey-light-2;
+    color: $color-grey-light;
     text-transform: uppercase;
 
     &--main {

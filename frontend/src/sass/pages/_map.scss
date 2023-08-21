@@ -1,12 +1,14 @@
+// Container for the map.
 .map-container {
     position: absolute;
-    background: $color-grey-light-1;
+    background: $color-grey-light;
     top: 10rem;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
+// Styling for the map markers.
 .map-marker {
     border-radius: 50%;
     height: 4rem;
@@ -16,10 +18,22 @@
 
     &:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-        border: 2px solid $color-grey-light-1;
+        border: 2px solid $color-grey-light;
     }
 }
 
+// Tooltip for the map markers.
+.marker-tooltip {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background-color: $color-grey-light;
+    color: $color-grey-dark;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    white-space: nowrap;
+}
+
+// Barrier that sits on top of map when chart UI is enabled.
 .map-barrier {
     position: absolute;
     top: 0;
@@ -32,15 +46,3 @@
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
 }
-
-.marker-tooltip {
-    font-size: 1.6rem;
-    padding: 1rem 2rem;
-    background-color: $color-grey-light-1;
-    color: $color-grey-dark;
-    text-transform: uppercase;
-    border-radius: 1rem;
-    white-space: nowrap;
-}
-
-

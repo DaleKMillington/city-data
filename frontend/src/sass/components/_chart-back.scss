@@ -1,11 +1,12 @@
+// The back button as part of the overall chart UI.
 .chart-back {
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     cursor: pointer;
-    color: $color-grey-light-1;
-    border: 2px solid $color-grey-light-1;
+    color: $color-grey-light;
+    border: 2px solid $color-grey-light;
     border-radius: 0.3rem;
     padding: 0.25rem 1.5rem;
 

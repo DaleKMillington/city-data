@@ -1,3 +1,4 @@
+// Animation to fade in and move in from the left hand side.
 @keyframes moveInLeft {
     0% {
         opacity: 0;
@@ -16,10 +17,11 @@
     }
 }
 
+// Animation to fade in and move in from the right hand side.
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(20rem);
+        transform: translateX(10rem);
         visibility: visible;
     }
 
@@ -34,6 +36,7 @@
     }
 }
 
+// Animation to fade in and move in from the right hand side. No bounce as menu items within container.
 @keyframes menuMoveInRight {
     0% {
         opacity: 0;
@@ -46,6 +49,7 @@
     }
 }
 
+// Animation to fade in.
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -55,6 +59,7 @@
     }
 }
 
+// Animation to slightly rotate back and forth.
 @keyframes wobbleRotate {
     0% {
         transform: rotate(0deg);

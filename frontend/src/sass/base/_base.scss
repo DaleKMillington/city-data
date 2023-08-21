@@ -1,3 +1,4 @@
+// Remove all margins, paddings, and use inherit box sizing (from body defined below).
 *,
 *::after,
 *::before {
@@ -16,8 +17,10 @@ html {
     font-size: 62.5%;
 }
 
+// Box sizing set to border-box for easier calculations. Plus remove scroll bars as all self-contained in 1 viewport.
 body {
     box-sizing: border-box;
-    background: $color-grey-light-1;
+    background: $color-grey-light;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
