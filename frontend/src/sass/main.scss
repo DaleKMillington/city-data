@@ -10,6 +10,8 @@
 @import "base/utilities";
 
 // Components
+@import "components/about-card";
+@import "components/about-icon";
 @import "components/chart-back";
 @import "components/chart-conatiner-element";
 @import "components/chart-row";
@@ -20,3 +22,4 @@
 
 // Pages
 @import "pages/map";
+@import "pages/about";

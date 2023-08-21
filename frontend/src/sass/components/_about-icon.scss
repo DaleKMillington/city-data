@@ -1,0 +1,41 @@
+.about-icon {
+    position: absolute;
+    width: 15%;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+        animation: wobbleRotate 1s infinite linear;
+    }
+
+    &--one {
+        top: 13%;
+        left: 6%;
+    }
+
+    &--two {
+        bottom: 5%;
+        left: 5%;
+    }
+
+    &--three {
+        bottom: 20%;
+        left: 30%;
+    }
+
+    &--four {
+        bottom: 15%;
+        right: 30%;
+    }
+
+    &--five {
+        bottom: 5%;
+        right: 5%;
+    }
+
+    &--six {
+        top: 13%;
+        right: 6%;
+    }
+
+
+}
