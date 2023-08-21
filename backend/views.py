@@ -3,7 +3,10 @@ API Views relating to the City and WeatherData models.
 """
 
 # Third Party Imports
-from rest_framework import viewsets
+from rest_framework import (
+    viewsets,
+    status
+)
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -25,6 +28,17 @@ class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
     authentication_classes = [APIKeyAuthentication]
+
+    def create(self, request, *args, **kwargs):
+        """ Allow a list of single element to be posted. """
+        data = request.data
+        if isinstance(data, list):
+            serializer = self.get_serializer(data=data, many=True)
+        else:
+            serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class WeatherDataView(APIView):
