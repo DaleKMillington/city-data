@@ -50,7 +50,7 @@ Make a copy of this API key as this will be needed later.
 
 #### Django Environment Variables
 The Django application has a single environment variable named `OPEN_WEATHER_MAP_API_KEY`
-which is obtainable from (Open Weather Map)[https://home.openweathermap.org/api_keys] after you have made the free account.
+which is obtainable from [Open Weather Map](https://home.openweathermap.org/api_keys) after you have made the free account.
 
 #### Create City Data
 The next step is to create some city data. You can use Django Admin for this but it is much quicker 
