@@ -42,10 +42,10 @@ const Map = () => {
         <>
             <MapContainer
                 className="map-container"
-                minZoom={3}
-                maxZoom={19}
-                scrollWheelZoom={true}
-                zoomControl={false}
+                minZoom={ 3 }
+                maxZoom={ 19 }
+                scrollWheelZoom={ true }
+                zoomControl={ false }
             >
                 <TileLayer
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"

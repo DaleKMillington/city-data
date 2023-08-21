@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 // Third Party Imports
 import { useMap } from 'react-leaflet';
-import L from 'leaflet';
 import axios from "axios";
 
 // Components
@@ -46,11 +45,6 @@ const WeatherChartsUI = ({ activeCity, clearActiveCity }: WeatherChartsUIProps) 
         map.boxZoom.disable();
         map.keyboard.disable();
         map.scrollWheelZoom.disable();
-        map.eachLayer(layer => {
-            if (layer instanceof L.Marker) {
-                layer.unbindTooltip();
-            }
-        });
         return () => {
             map.dragging.enable();
             map.doubleClickZoom.enable();
